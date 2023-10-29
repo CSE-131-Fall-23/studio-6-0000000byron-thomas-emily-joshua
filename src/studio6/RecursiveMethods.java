@@ -35,7 +35,7 @@ public class RecursiveMethods {
 		} else if  (p % q == 0) {
 			return q;
 		} else {
-			return 0;
+			return gcd(p, q-1);
 		}
 		// FIXME compute the gcd of p and q using recursion	
 	}
