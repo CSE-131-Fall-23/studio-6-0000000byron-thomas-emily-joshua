@@ -32,10 +32,14 @@ public class RecursiveMethods {
 	public static int gcd(int p, int q) {
 		if (q == 0 || p == 0) {
 			return 0;
-		} else if  (p % q == 0) {
+		} else if  (p % q == 0 || q % p == 0) {
 			return q;
 		} else {
-			return gcd(p, q-1);
+			if (p > q) {
+				return gcd(p, q-1);				
+			} else {
+				return gcd (q, p-1); // Not quite fixed
+			}
 		}
 		// FIXME compute the gcd of p and q using recursion	
 	}
